@@ -106,7 +106,6 @@ def backpropagate(variable: Variable, deriv: Any) -> None:
     """
 
     q: Iterable[Variable] = topological_sort(variable)
-
     derivatives = {variable.unique_id: deriv}
     for scalar in q:
         d_out = derivatives[scalar.unique_id]
